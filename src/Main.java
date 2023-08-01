@@ -29,12 +29,9 @@ public class Main {
     public static void task3() {
         System.out.println("Задача 3");
         for (int i = 0; i < 17; i = i + 2) {
-            // если не ошибаюсь 0 не является четным числом, поэтому применил тут continue
-            // можно было бы и через деление на остаток сделать
-            if (i == 0) {
-                continue;
+            if (i != 0) {
+                System.out.println(i);
             }
-            System.out.println(i);
         }
     }
 
@@ -82,19 +79,21 @@ public class Main {
         System.out.println("Задача 9");
         int totalSavings = 0;
         int monthlyDeposit = 29000;
+        double percentPerYear = 0.12;
+        double percentPerMonth = percentPerYear / 12;
         for (int i = 1; i <= 12; i++) {
             totalSavings += monthlyDeposit;
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + (totalSavings+(totalSavings * 0.1)) + " рублей");
+            double monthlyGrowth = totalSavings + (totalSavings * percentPerMonth);
+            System.out.println("Месяц " + i + ", сумма накоплений равна " + monthlyGrowth + " рублей");
         }
     }
 
     public static void task10() {
         System.out.println("Задача 10");
         for (int i = 1; i <= 10; i++) {
-            System.out.print((2 * i) + " ");
+            System.out.println("2 * " + i + " = " + (2 * i));
         }
 
     }
-
 
 }
